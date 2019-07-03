@@ -1,8 +1,9 @@
 import React from 'react';
+import './style.css';
 
-export default function Button({ buttonType, buttonWidth, buttonLabel }) {
+export default function Button({ buttonType, buttonLabel }) {
   return (
-    <button type="button" className={buttonType} style={{ width: buttonWidth }}>
+    <button id="button" type="button" className={buttonType}>
       {buttonLabel}
     </button>
   );
