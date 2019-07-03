@@ -9,7 +9,7 @@ export default function InputField({
   return (
     <>
       <div
-        className="col-md-4 input-group mb-2 mr-sm-2"
+        className="input-group mb-2 mr-sm-2"
         style={{ padding: '0px' }}
       >
         <div className="input-group-prepend">
