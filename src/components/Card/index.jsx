@@ -1,7 +1,13 @@
 import React from 'react';
 import './style.css';
 
-export default function Card({ cardTitle, cardBody, cardWidth, message }) {
+export default function Card({
+  cardTitle,
+  cardBody,
+  cardWidth,
+  message,
+  footerMessage
+}) {
   return (
     <>
       <div className={cardWidth}>
@@ -14,9 +20,7 @@ export default function Card({ cardTitle, cardBody, cardWidth, message }) {
               {cardBody}
             </div>
             <hr />
-            <p className="login-p-tags">
-              Have an account alerady? <a href="#">Login</a>
-            </p>
+            <p className="login-p-tags">{footerMessage}</p>
           </div>
         </div>
       </div>

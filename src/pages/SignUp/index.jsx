@@ -25,6 +25,11 @@ export default function SignUp() {
             />
           </>
         }
+        footerMessage={
+          <span>
+            Don't have an account? <a href="/">Signup</a>
+          </span>
+        }
       />
     </div>
   );
