@@ -5,10 +5,10 @@ export default function Jumbotron() {
     <>
       <div className="jumbotron jumbotron-fluid">
         <div className="container">
-          <h1 className="display-4">Give feedback effortlessly</h1>
+          <h1 className="display-4">Meal feedback made effortless</h1>
           <p className="lead">
-            This is a modified jumbotron that occupies the entire horizontal
-            space of its parent.
+            Rate your satisfaction after meal, making sure you get the best
+            always and swift action taken if disatisfied
           </p>
         </div>
       </div>
