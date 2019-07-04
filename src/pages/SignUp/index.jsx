@@ -22,7 +22,7 @@ export default function SignUp() {
             <InputField />
             <Button
               buttonLabel="sign up"
-              buttonType="btn btn-success btn-block"
+              buttonType="btn btn-custom-outline btn-block"
             />
           </>
         }

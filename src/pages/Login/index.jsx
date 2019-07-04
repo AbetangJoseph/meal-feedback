@@ -18,7 +18,7 @@ export default function Login() {
             <InputField />
             <Button
               buttonLabel="Login"
-              buttonType="btn btn-success btn-block"
+              buttonType="btn btn-custom-outline btn-block"
             />
           </>
         }
