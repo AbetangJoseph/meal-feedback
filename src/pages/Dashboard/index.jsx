@@ -3,6 +3,7 @@ import './style.css';
 import { Link } from 'react-router-dom';
 import Card from '../../components/Card';
 import Button from '../../components/Button';
+import RadioBox from '../../components/RadioBox';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
@@ -40,11 +41,22 @@ export default function Dasboard() {
           cardTitle="Breakfast"
           cardBody="Not available"
           footerMessage={
-            <Button
-              buttonType="btn btn-outline-danger"
-              icon={<FontAwesomeIcon icon={faPaperPlane} />}
-              buttonLabel="feedback"
-            />
+            <>
+              <div>
+                <RadioBox
+                  labelText="very good"
+                  labelName="feedback"
+                  id="verygood"
+                />
+                <RadioBox labelText="good" labelName="feedback" id="good" />
+                <RadioBox labelText="bad" labelName="feedback" id="bad" />
+              </div>
+              <Button
+                buttonType="btn btn-outline-danger"
+                icon={<FontAwesomeIcon icon={faPaperPlane} />}
+                buttonLabel="feedback"
+              />
+            </>
           }
         />
         <Card
