@@ -1,3 +1,12 @@
 #button {
   cursor: pointer;
 }
+.btn-custom {
+  background-color: #cf320d;
+  color: white;
+}
+
+.btn-custom-outline {
+  border: 1px solid #cf320d;
+  color: #cf320d;
+}
