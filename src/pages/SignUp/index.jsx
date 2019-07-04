@@ -3,6 +3,7 @@ import Card from '../../components/Card';
 import InputField from '../../components/InputField';
 import Button from '../../components/Button';
 import './style.css';
+import { Link } from 'react-router-dom';
 
 export default function SignUp() {
   return (
@@ -27,7 +28,9 @@ export default function SignUp() {
         }
         footerMessage={
           <span>
-            Don't have an account? <a href="/">Signup</a>
+            <Link to="/login" className="nav-link dashboard-headers">
+              Have an account alerady? Login
+            </Link>
           </span>
         }
       />
