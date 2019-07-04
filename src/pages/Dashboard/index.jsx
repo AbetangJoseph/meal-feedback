@@ -8,6 +8,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 export default function Dasboard() {
+  const foodCards = [
+    {
+      cardTitle: 'Breakfast',
+      labelName: 'breakfeedback',
+      option1: 'verygoodbreakfast',
+      option2: 'goodbreakfast',
+      option3: 'badreakfast'
+    },
+    {
+      cardTitle: 'Lunch',
+      labelName: 'lunchfeedback',
+      option1: 'verygoodlunch',
+      option2: 'goodlunch',
+      option3: 'badlunch'
+    },
+    {
+      cardTitle: 'Dinner',
+      labelName: 'dinnerfeedback',
+      option1: 'verygooddinner',
+      option2: 'gooddinner',
+      option3: 'baddinner'
+    }
+  ];
+
   return (
     <div style={{ margin: '25px' }}>
       <div
@@ -22,7 +46,7 @@ export default function Dasboard() {
           </Link>
         </h5>
         <h5>
-          <Link to="/history" className="nav-link dashboard-headers">
+          <Link to="/myratings" className="nav-link dashboard-headers">
             my ratings
           </Link>
         </h5>
@@ -36,83 +60,39 @@ export default function Dasboard() {
           marginBottom: '50px'
         }}
       >
-        <Card
-          cardWidth="col-sm-3"
-          cardTitle="Breakfast"
-          cardBody="Not available"
-          footerMessage={
-            <>
-              <div>
-                <RadioBox
-                  labelText="very good"
-                  labelName="breakfeedback"
-                  id="verygoodbreakfast"
+        {foodCards.map(card => (
+          <Card
+            cardWidth="col-sm-3"
+            cardTitle={card.cardTitle}
+            cardBody="Not available"
+            footerMessage={
+              <>
+                <div>
+                  <RadioBox
+                    labelText="very good"
+                    labelName={card.labelName}
+                    id={card.option1}
+                  />
+                  <RadioBox
+                    labelText="good"
+                    labelName={card.labelName}
+                    id={card.option2}
+                  />
+                  <RadioBox
+                    labelText="bad"
+                    labelName={card.labelName}
+                    id={card.option3}
+                  />
+                </div>
+                <Button
+                  buttonType="btn btn-outline-danger"
+                  icon={<FontAwesomeIcon icon={faPaperPlane} />}
+                  buttonLabel="send feedback"
                 />
-                <RadioBox
-                  labelText="good"
-                  labelName="breakfeedback"
-                  id="goodbreakfast"
-                />
-                <RadioBox labelText="bad" labelName="breakfeedback" id="badbreakfast" />
-              </div>
-              <Button
-                buttonType="btn btn-outline-danger"
-                icon={<FontAwesomeIcon icon={faPaperPlane} />}
-                buttonLabel="send feedback"
-              />
-            </>
-          }
-        />
-        <Card
-          cardWidth="col-sm-3"
-          cardTitle="Lunch"
-          cardBody="Not available"
-          footerMessage={
-            <>
-              <div>
-                <RadioBox
-                  labelText="very good"
-                  labelName="lunchfeedback"
-                  id="verygoodlunch"
-                />
-                <RadioBox
-                  labelText="good"
-                  labelName="lunchfeedback"
-                  id="goodlunch"
-                />
-                <RadioBox labelText="bad" labelName="lunchfeedback" id="badlunch" />
-              </div>
-              <Button
-                buttonType="btn btn-outline-danger"
-                icon={<FontAwesomeIcon icon={faPaperPlane} />}
-                buttonLabel="send feedback"
-              />
-            </>
-          }
-        />
-        <Card
-          cardWidth="col-sm-3"
-          cardTitle="Dinner"
-          cardBody="Not available"
-          footerMessage={
-            <>
-              <div>
-                <RadioBox
-                  labelText="very good"
-                  labelName="feedback"
-                  id="verygooddinner"
-                />
-                <RadioBox labelText="good" labelName="feedback" id="gooddinner" />
-                <RadioBox labelText="bad" labelName="feedback" id="baddinner" />
-              </div>
-              <Button
-                buttonType="btn btn-outline-danger"
-                icon={<FontAwesomeIcon icon={faPaperPlane} />}
-                buttonLabel="send feedback"
-              />
-            </>
-          }
-        />
+              </>
+            }
+          />
+        ))}
       </div>
     </div>
   );
