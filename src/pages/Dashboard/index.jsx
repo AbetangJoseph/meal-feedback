@@ -45,16 +45,20 @@ export default function Dasboard() {
               <div>
                 <RadioBox
                   labelText="very good"
-                  labelName="feedback"
-                  id="verygood"
+                  labelName="breakfeedback"
+                  id="verygoodbreakfast"
                 />
-                <RadioBox labelText="good" labelName="feedback" id="good" />
-                <RadioBox labelText="bad" labelName="feedback" id="bad" />
+                <RadioBox
+                  labelText="good"
+                  labelName="breakfeedback"
+                  id="goodbreakfast"
+                />
+                <RadioBox labelText="bad" labelName="breakfeedback" id="badbreakfast" />
               </div>
               <Button
                 buttonType="btn btn-outline-danger"
                 icon={<FontAwesomeIcon icon={faPaperPlane} />}
-                buttonLabel="feedback"
+                buttonLabel="send feedback"
               />
             </>
           }
@@ -64,11 +68,26 @@ export default function Dasboard() {
           cardTitle="Lunch"
           cardBody="Not available"
           footerMessage={
-            <Button
-              buttonType="btn btn-outline-danger"
-              icon={<FontAwesomeIcon icon={faPaperPlane} />}
-              buttonLabel="feedback"
-            />
+            <>
+              <div>
+                <RadioBox
+                  labelText="very good"
+                  labelName="lunchfeedback"
+                  id="verygoodlunch"
+                />
+                <RadioBox
+                  labelText="good"
+                  labelName="lunchfeedback"
+                  id="goodlunch"
+                />
+                <RadioBox labelText="bad" labelName="lunchfeedback" id="badlunch" />
+              </div>
+              <Button
+                buttonType="btn btn-outline-danger"
+                icon={<FontAwesomeIcon icon={faPaperPlane} />}
+                buttonLabel="send feedback"
+              />
+            </>
           }
         />
         <Card
@@ -76,11 +95,22 @@ export default function Dasboard() {
           cardTitle="Dinner"
           cardBody="Not available"
           footerMessage={
-            <Button
-              buttonType="btn btn-outline-danger"
-              icon={<FontAwesomeIcon icon={faPaperPlane} />}
-              buttonLabel="feedback"
-            />
+            <>
+              <div>
+                <RadioBox
+                  labelText="very good"
+                  labelName="feedback"
+                  id="verygooddinner"
+                />
+                <RadioBox labelText="good" labelName="feedback" id="gooddinner" />
+                <RadioBox labelText="bad" labelName="feedback" id="baddinner" />
+              </div>
+              <Button
+                buttonType="btn btn-outline-danger"
+                icon={<FontAwesomeIcon icon={faPaperPlane} />}
+                buttonLabel="send feedback"
+              />
+            </>
           }
         />
       </div>
