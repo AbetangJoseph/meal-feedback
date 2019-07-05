@@ -20,7 +20,7 @@ export default function Card({
               {cardBody}
             </div>
             <hr />
-            <p className="login-p-tags">{footerMessage}</p>
+            <div className="login-p-tags">{footerMessage}</div>
           </div>
         </div>
       </div>
