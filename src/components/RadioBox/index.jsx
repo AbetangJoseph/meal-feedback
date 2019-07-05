@@ -4,16 +4,16 @@ export default function RadioBox({ labelName, labelText, id }) {
   return (
     <>
       <div
-        class="custom-control custom-radio custom-control-inline"
+        className="custom-control custom-radio custom-control-inline"
         style={{ marginBottom: '15px' }}
       >
         <input
           type="radio"
-          class="custom-control-input"
+          className="custom-control-input"
           id={id}
           name={labelName}
         />
-        <label class="custom-control-label" for={id}>
+        <label className="custom-control-label" htmlFor={id}>
           {labelText}
         </label>
       </div>
