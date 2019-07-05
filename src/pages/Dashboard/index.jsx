@@ -60,8 +60,9 @@ export default function Dasboard() {
           marginBottom: '50px'
         }}
       >
-        {foodCards.map(card => (
+        {foodCards.map((card, index) => (
           <Card
+            key={index}
             cardWidth="col-sm-3"
             cardTitle={card.cardTitle}
             cardBody="Not available"
