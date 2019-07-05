@@ -1,0 +1,9 @@
+.my-ratings {
+  display: flex;
+  align-items: center;
+}
+
+.my-ratings > h5 {
+  flex: 1;
+  color: #cf320d;
+}
