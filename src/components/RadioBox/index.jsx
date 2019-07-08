@@ -1,6 +1,12 @@
 import React from 'react';
 
-export default function RadioBox({ labelName, labelText, id }) {
+export default function RadioBox({
+  labelName,
+  labelText,
+  id,
+  radioValue,
+  onchange
+}) {
   return (
     <>
       <div
@@ -9,9 +15,11 @@ export default function RadioBox({ labelName, labelText, id }) {
       >
         <input
           type="radio"
-          className="custom-control-input"
           id={id}
+          className="custom-control-input"
           name={labelName}
+          value={radioValue}
+          onChange={onchange}
         />
         <label className="custom-control-label" htmlFor={id}>
           {labelText}
