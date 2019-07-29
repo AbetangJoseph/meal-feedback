@@ -12,8 +12,17 @@ import {
   faAt
 } from '@fortawesome/free-solid-svg-icons';
 
+const intialState = {
+  firstname: '',
+  lastname: '',
+  email: '',
+  phone: '',
+  password: '',
+  confirmpassword: ''
+};
+
 export default function SignUp() {
-  const [userSignup, setUserSingup] = useState({});
+  const [userSignup, setUserSingup] = useState(intialState);
 
   const handleChange = e => {
     e.preventDefault();
