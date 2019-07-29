@@ -22,16 +22,16 @@ const intialState = {
 };
 
 export default function SignUp() {
-  const [userSignup, setUserSingup] = useState(intialState);
+  const [userSignup, setUserSignUp] = useState(intialState);
 
   const handleChange = e => {
     e.preventDefault();
-    console.log(e.target.value);
+    setUserSignUp({ ...userSignup, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = e => {
-    // e.preventDefault();
-    console.log(e);
+    e.preventDefault();
+    setUserSignUp(intialState);
   };
 
   return (
