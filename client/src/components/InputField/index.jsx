@@ -26,6 +26,7 @@ export default function InputField({
           name={inputName}
           onChange={change}
           value={inputValue}
+          // required
         />
       </div>
     </>
