@@ -3,6 +3,8 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import './models/connection';
+import graphQLHTTP from 'express-graphql';
+import schema from './typeDefs/schema';
 
 var app = express();
 
@@ -10,6 +12,14 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(
+  '/graphql',
+  graphQLHTTP({
+    schema,
+    graphiql: true
+  })
+);
 
 // catch 404 and forward to error handler
 app.use(function(_req, _res, next) {
