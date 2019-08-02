@@ -2,10 +2,23 @@ import { User } from '../models/schema';
 import 'dotenv/config';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import Joi from '@hapi/joi';
+import { userSignUpSchema } from '../validation';
 
 const createUser = async (userInfo: any) => {
-  const user = new User(userInfo);
-  const foundUser = await User.findOne({ email: userInfo.email });
+  const { error, value } = Joi.validate(userInfo, userSignUpSchema, {
+    skipFunctions: true,
+    stripUnknown: true,
+    abortEarly: false
+  });
+
+  if (error) {
+    const err = error.details.map(error => error.message.replace(/\"/g, ''));
+    throw new Error(err);
+  }
+
+  const user = new User(value);
+  const foundUser = await User.findOne({ email: value.email });
 
   if (!foundUser) {
     const salt = await bcrypt.genSalt(10);
