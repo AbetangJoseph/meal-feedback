@@ -5,13 +5,18 @@ import logger from 'morgan';
 import './models/connection';
 import graphQLHTTP from 'express-graphql';
 import schema from './typeDefs/schema';
+import usersRouter from './routes';
+import cors from 'cors';
 
 var app = express();
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use('/api', usersRouter);
 
 app.use(
   '/graphql',
