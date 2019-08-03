@@ -5,7 +5,7 @@ import {
   GraphQLSchema
 } from 'graphql';
 import { userType } from './types';
-import { createUser, userLogin } from '../controllers';
+import { createUser, userLogin } from '../controllers/users';
 
 const query = new GraphQLObjectType({
   name: 'Queries',
