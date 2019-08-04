@@ -36,16 +36,16 @@ function SignUp(props) {
   const handleSubmit = e => {
     e.preventDefault();
     // console.log(userSignup);
-
+  
     const data = props.createUserMutation({
-      variables: {
-        firstName: userSignup.firstName,
-        lastName: userSignup.lastName,
-        phone: userSignup.phone,
-        password: userSignup.password,
-        email: userSignup.email
-      }
-    });
+        variables: {
+          firstName: userSignup.firstName,
+          lastName: userSignup.lastName,
+          phone: userSignup.phone,
+          password: userSignup.password,
+          email: userSignup.email
+        }
+      });
     console.log(data);
 
     setUserSignUp(intialState);
